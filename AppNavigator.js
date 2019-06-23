@@ -8,11 +8,11 @@
  */
 
 import { createStackNavigator } from 'react-navigation';
-import SignIn from './SignIn';
+import SignIn from './Sigin';
 
 
 const AppNavigator = createStackNavigator({
-    SignIn: { screen: SignIn } ,
+  SignIn: { screen: SignIn } ,
    
   }, { headerMode: 'none' }, {
     initialRouteName: 'Loading'
