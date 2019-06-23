@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, AppRegistry, Image, TextInput, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, View, AppRegistry, Image, TextInput, TouchableOpacity, ImageBackground} from 'react-native';
 
 const background = require("./background.jpg");
 
@@ -24,12 +24,11 @@ export default class App extends Component {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
   };
     return (
-      <Image 
-        style={[styles.background, styles.container]} 
-        source={pic}
-        resizeMode="cover"
-      ></Image>
-
+      <View style={{ flex: 1}}>
+      <ImageBackground source={pic} style={[styles.background, styles.container]} resizeMode="cover">
+      <Text>Inside</Text>
+      </ImageBackground>
+      </View>
     );
   }
 }
@@ -37,22 +36,49 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
   background: {
     width: null,
-    height: null
+    height: null,
+  },
+  wrapper: {
+    paddingHorizontal: 15,
+  },
+  inputWrap: {
+    flexDirection: "row",
+    marginVertical: 10,
+    height: 40,
+    backgroundColor: "transparent"
+  },
+  input: {
+    flex: 1,
+    paddingHorizontal: 10,
+    backgroundColor: '#FFF'
+  },
+  iconWrap: {
+    paddingHorizontal: 7,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#d73352"
+  },
+  icon: {
+    width: 20,
+    height: 20,
+  },
+  button: {
+    backgroundColor: "#d73352",
+    paddingVertical: 15,
+    marginVertical: 15,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttonText: {
+    color: "#FFF",
+    fontSize: 18
+  },
+  forgotPasswordText: {
+    color: "#FFF",
+    backgroundColor: "transparent",
+    textAlign: "center"
   },
 });
