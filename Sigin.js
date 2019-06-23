@@ -61,7 +61,11 @@ export default class App extends Component {
               underlineColorAndroid="transparent"
             />
           </View>
-          <TouchableOpacity activeOpacity={.5}>
+          <TouchableOpacity activeOpacity={.5}
+          onPress={() =>
+            this.props.navigation.navigate('Home')
+          }
+          >
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sign In</Text>
             </View>

@@ -10,11 +10,13 @@
 import { createStackNavigator } from 'react-navigation';
 import SignIn from './Sigin';
 import SiginUp from './Siginup';
+import Home from './Home';
 
 
 const AppNavigator = createStackNavigator({
   SignIn: { screen: SignIn } ,
   SiginUp: { screen: SiginUp } ,
+  Home: { screen: Home } ,
    
   }, { headerMode: 'none' }, {
     initialRouteName: 'Loading'
