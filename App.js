@@ -28,7 +28,6 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1}}>
       <ImageBackground source={pic} style={[styles.background, styles.container]} resizeMode="cover">
-      <Text>Inside</Text>
 
       <View style={styles.container} />
       <View style={styles.wrapper}>
@@ -62,7 +61,18 @@ export default class App extends Component {
               underlineColorAndroid="transparent"
             />
           </View>
+          <TouchableOpacity activeOpacity={.5}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Sign In</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={.5}>
+            <View>
+              <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+            </View>
+          </TouchableOpacity>
       </View>
+      <View style={styles.container} />
       </ImageBackground>
       </View>
     );
@@ -113,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   forgotPasswordText: {
-    color: "#FFF",
+    color: "#d73352",
     backgroundColor: "transparent",
     textAlign: "center"
   },
