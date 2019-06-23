@@ -47,6 +47,36 @@ export default class App extends Component {
         </View>
 
         <View style={styles.inputWrap}>
+        <View style={styles.iconWrap}>
+              <Image
+                source={personIcon}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+            <TextInput
+              placeholder="Email"
+              style={styles.input}
+              underlineColorAndroid="transparent"
+            />
+        </View>
+
+        <View style={styles.inputWrap}>
+        <View style={styles.iconWrap}>
+              <Image
+                source={personIcon}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+            <TextInput
+              placeholder="Phone"
+              style={styles.input}
+              underlineColorAndroid="transparent"
+            />
+        </View>
+
+        <View style={styles.inputWrap}>
             <View style={styles.iconWrap}>
               <Image
                 source={lockIcon}
@@ -63,17 +93,12 @@ export default class App extends Component {
           </View>
           <TouchableOpacity activeOpacity={.5}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>Sign In</Text>
+              <Text style={styles.buttonText}>Sign Up</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={.5}
-            onPress={() =>
-              this.props.navigation.navigate('SiginUp')
-            }
-          >
+          <TouchableOpacity activeOpacity={.5}>
             <View>
-              <Text style={styles.forgotPasswordText}>Forgot Password?
-              </Text>
+              <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
             </View>
           </TouchableOpacity>
       </View>
