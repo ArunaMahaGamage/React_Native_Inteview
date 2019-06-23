@@ -63,7 +63,7 @@ export default class App extends Component {
           </View>
           <TouchableOpacity activeOpacity={.5}
           onPress={() =>
-            this.props.navigation.navigate('Home')
+            this.props.navigation.navigate('ApiCall')
           }
           >
             <View style={styles.button}>
