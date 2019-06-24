@@ -29,6 +29,7 @@ const num9 = require("./num9.png");
 const num0 = require("./num0.png");
 const back = require("./back.png");
 
+const var1 = '';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -99,7 +100,7 @@ export default class App extends Component {
         <View style={styles.inputWrapNum}>
           <TouchableOpacity activeOpacity={.5}
                 onPress={() =>
-                  this.props.navigation.navigate('CListview')
+                  this.var1 += '1'
                 }
               >
             <View style={styles.iconWrap}>
@@ -113,7 +114,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '2'
               }
             >
             <View style={styles.iconWrap}>
@@ -127,7 +128,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '3'
               }
             >
             <View style={styles.iconWrap}>
@@ -144,7 +145,7 @@ export default class App extends Component {
         <View style={styles.inputWrapNum}>
         <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '4'
               }
             >
               <View style={styles.iconWrap}>
@@ -158,7 +159,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '5'
               }
             >
               <View style={styles.iconWrap}>
@@ -172,7 +173,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '6'
               }
             >
               <View style={styles.iconWrap}>
@@ -189,7 +190,7 @@ export default class App extends Component {
           <View style={styles.inputWrapNum}>
           <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '7'
               }
             >
               <View style={styles.iconWrap}>
@@ -203,7 +204,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '8'
               }
             >
               <View style={styles.iconWrap}>
@@ -217,7 +218,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '9'
               }
             >
               <View style={styles.iconWrap}>
@@ -241,7 +242,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += '0'
               }
             >
               <View style={styles.iconWrap}>
@@ -255,7 +256,7 @@ export default class App extends Component {
 
             <TouchableOpacity activeOpacity={.5}
               onPress={() =>
-                this.props.navigation.navigate('CListview')
+                this.var1 += ''
               }
             >
               <View style={styles.iconWrap}>
