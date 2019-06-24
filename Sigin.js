@@ -14,6 +14,22 @@ const background = require("./background.jpg");
 const lockIcon = require("./lock.png");
 const personIcon = require("./person.png");
 
+const num1 = require("./num1.png");
+const num2 = require("./num2.png");
+const num3 = require("./num3.png");
+
+const num4 = require("./num4.png");
+const num5 = require("./num5.png");
+const num6 = require("./num6.png");
+
+const num7 = require("./num7.png");
+const num8 = require("./num8.png");
+const num9 = require("./num9.png");
+
+const num0 = require("./num0.png");
+const back = require("./back.png");
+
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -71,36 +87,112 @@ export default class App extends Component {
           <RadioGroup radioButtons={this.state.data} onPress={this.onPress} flexDirection='row'/>
         </View>
 
-        <View style={styles.inputWrap}>
+        <View style={styles.inputWrapNum}>
         <View style={styles.iconWrap}>
               <Image
-                source={personIcon}
+                source={num1}
                 style={styles.icon}
                 resizeMode="contain"
               />
             </View>
-            <TextInput
-              placeholder="Username"
-              style={styles.input}
-              underlineColorAndroid="transparent"
-            />
-        </View>
 
-        <View style={styles.inputWrap}>
             <View style={styles.iconWrap}>
               <Image
-                source={lockIcon}
+                source={num2}
                 style={styles.icon}
                 resizeMode="contain"
               />
             </View>
-            <TextInput
-              placeholder="Password"
-              secureTextEntry
-              style={styles.input}
-              underlineColorAndroid="transparent"
-            />
+
+            <View style={styles.iconWrap}>
+              <Image
+                source={num3}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+        </View>
+
+        <View style={styles.inputWrapNum}>
+            <View style={styles.iconWrap}>
+              <Image
+                source={num4}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+
+            <View style={styles.iconWrap}>
+              <Image
+                source={num5}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+
+            <View style={styles.iconWrap}>
+              <Image
+                source={num6}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+            
           </View>
+
+          <View style={styles.inputWrapNum}>
+            <View style={styles.iconWrap}>
+              <Image
+                source={num7}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+
+            <View style={styles.iconWrap}>
+              <Image
+                source={num8}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+
+            <View style={styles.iconWrap}>
+              <Image
+                source={num9}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+            
+          </View>
+
+          <View style={styles.inputWrapNum}>
+            <View style={styles.iconWrapEmpty}>
+            <Image
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+
+            <View style={styles.iconWrap}>
+              <Image
+                source={num0}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+
+            <View style={styles.iconWrap}>
+              <Image
+                source={back}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            </View>
+            
+          </View>
+          
           <TouchableOpacity activeOpacity={.5}
           onPress={() =>
             this.props.navigation.navigate('CListview')
@@ -116,7 +208,7 @@ export default class App extends Component {
             }
           >
             <View>
-              <Text style={styles.createAccount}>Forget PIN
+              <Text style={styles.createAccount}>Forget PIN ?
               </Text>
             </View>
           </TouchableOpacity>
@@ -156,6 +248,13 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: "transparent"
   },
+  inputWrapNum: {
+    flexDirection: "row",
+    marginVertical: 10,
+    height: 40,
+    backgroundColor: "transparent",
+    justifyContent: 'space-evenly'
+  },
   input: {
     flex: 1,
     paddingHorizontal: 10,
@@ -167,7 +266,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: '#FFF'
   },
+  iconWrapEmpty: {
+    width: null,
+    height: null,
+    paddingHorizontal: 7,
+    alignItems: "center",
+    justifyContent: "center",
+    
+  },
   iconWrap: {
+    width: null,
+    height: null,
     paddingHorizontal: 7,
     alignItems: "center",
     justifyContent: "center",

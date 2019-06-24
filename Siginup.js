@@ -42,59 +42,39 @@ export default class App extends Component {
           
         </View>
 
-        <View style={styles.inputWrap}>
-        <View style={styles.iconWrap}>
-              <Image
-                source={personIcon}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
-            <TextInput
-              placeholder="Email"
-              style={styles.input}
-              underlineColorAndroid="transparent"
-            />
+        <View style={styles.inputIconWrap}>
+          
         </View>
-
-        <View style={styles.inputWrap}>
-        <View style={styles.iconWrap}>
-              <Image
-                source={personIcon}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
-            <TextInput
-              placeholder="Phone"
-              style={styles.input}
-              underlineColorAndroid="transparent"
-            />
-        </View>
-
-        <View style={styles.inputWrap}>
-            <View style={styles.iconWrap}>
-              <Image
-                source={lockIcon}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
-            <TextInput
-              placeholder="Password"
-              secureTextEntry
-              style={styles.input}
-              underlineColorAndroid="transparent"
-            />
-          </View>
-          <TouchableOpacity activeOpacity={.5}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Sign Up</Text>
+        
+          
+          
+          <TouchableOpacity activeOpacity={.5}
+            onPress={() =>
+              this.props.navigation.navigate('SiginUp')
+            }
+          >
+            <View>
+              <Text style={styles.resetPIN}>Reset your PIN
+              </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={.5}>
+
+          <View>
+              <Text style={styles.forgotPasswordText}>Reset PIN
+              </Text>
+            </View>
+
+            <view style={styles.eSpace}>
+              
+            </view>
+            <TouchableOpacity activeOpacity={.5}
+            onPress={() =>
+              this.props.navigation.navigate('SiginUp')
+            }
+          >
             <View>
-              {/* <Text style={styles.forgotPasswordText}>Forgot Password?</Text> */}
+              <Text style={styles.forgotPasswordText}>Enter Pin Again
+              </Text>
             </View>
           </TouchableOpacity>
       </View>
@@ -112,6 +92,10 @@ const styles = StyleSheet.create({
   background: {
     width: null,
     height: null,
+  },
+  eSpace: {
+    width: 1,
+    height: 5,
   },
   wrapper: {
     paddingHorizontal: 15,
@@ -159,6 +143,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#FFF",
     fontSize: 18
+  },
+  resetPIN: {
+    color: "#d73352",
+    backgroundColor: "transparent",
+    textAlign: "center",
+    fontSize: 22
   },
   forgotPasswordText: {
     color: "#d73352",
