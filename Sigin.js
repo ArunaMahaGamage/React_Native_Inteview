@@ -67,8 +67,8 @@ export default class App extends Component {
             />
         </View>
 
-        <View style={styles.inputWrap}>
-          <RadioGroup radioButtons={this.state.data} onPress={this.onPress} flexDirection='row' />
+        <View style={styles.radioGroup}>
+          <RadioGroup radioButtons={this.state.data} onPress={this.onPress} flexDirection='row'/>
         </View>
 
         <View style={styles.inputWrap}>
@@ -202,5 +202,14 @@ const styles = StyleSheet.create({
     color: "#13dd1e",
     backgroundColor: "transparent",
     textAlign: "center"
+  },
+  radioGroup: {
+    flexDirection: "row",
+    marginVertical: 10,
+    height: 40,
+    color: "#13dd1e",
+    backgroundColor: "transparent",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 });

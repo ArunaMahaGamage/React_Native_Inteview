@@ -17,6 +17,7 @@ import Login from './Login';
 
 
 const AppNavigator = createStackNavigator({
+  SignIn: { screen: SignIn } ,
   Login: { screen: Login } ,
   SignIn: { screen: SignIn } ,
   SiginUp: { screen: SiginUp } ,
