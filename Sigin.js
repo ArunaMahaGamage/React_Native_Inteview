@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, AppRegistry, Image, TextInput, TouchableOpacity, ImageBackground} from 'react-native';
+import {Platform, StyleSheet, Text, View, AsyncStorage, Image, TextInput, TouchableOpacity, ImageBackground} from 'react-native';
 import RadioGroup from 'react-native-radio-buttons-group';
 
 const background = require("./background.jpg");
@@ -68,6 +68,15 @@ export default class App extends Component {
   };
   let selectedButton = this.state.data.find(e => e.selected == true);
     selectedButton = selectedButton ? selectedButton.value : this.state.data[0].label;
+
+    _storeData = async () => {
+      try {
+        await AsyncStorage.setItem('PIN', '7890');
+      } catch (error) {
+        // Error saving data
+      }
+    };
+
     return (
       <View style={{ flex: 1}}>
       <ImageBackground source={pic} style={[styles.background, styles.container]} resizeMode="cover">
@@ -88,14 +97,25 @@ export default class App extends Component {
         </View>
 
         <View style={styles.inputWrapNum}>
-        <View style={styles.iconWrap}>
-              <Image
-                source={num1}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+          <TouchableOpacity activeOpacity={.5}
+                onPress={() =>
+                  this.props.navigation.navigate('CListview')
+                }
+              >
+            <View style={styles.iconWrap}>
+                  <Image
+                    source={num1}
+                    style={styles.icon}
+                    resizeMode="contain"
+                  />
+                </View>
+            </TouchableOpacity>
 
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
             <View style={styles.iconWrap}>
               <Image
                 source={num2}
@@ -103,7 +123,13 @@ export default class App extends Component {
                 resizeMode="contain"
               />
             </View>
+            </TouchableOpacity>
 
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
             <View style={styles.iconWrap}>
               <Image
                 source={num3}
@@ -111,59 +137,97 @@ export default class App extends Component {
                 resizeMode="contain"
               />
             </View>
+            </TouchableOpacity>
+
         </View>
 
         <View style={styles.inputWrapNum}>
-            <View style={styles.iconWrap}>
-              <Image
-                source={num4}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+        <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={num4}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
 
-            <View style={styles.iconWrap}>
-              <Image
-                source={num5}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={num5}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
 
-            <View style={styles.iconWrap}>
-              <Image
-                source={num6}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={num6}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
             
           </View>
 
           <View style={styles.inputWrapNum}>
-            <View style={styles.iconWrap}>
-              <Image
-                source={num7}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+          <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={num7}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
 
-            <View style={styles.iconWrap}>
-              <Image
-                source={num8}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={num8}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
 
-            <View style={styles.iconWrap}>
-              <Image
-                source={num9}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={num9}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
             
           </View>
 
@@ -175,33 +239,37 @@ export default class App extends Component {
               />
             </View>
 
-            <View style={styles.iconWrap}>
-              <Image
-                source={num0}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={num0}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
 
-            <View style={styles.iconWrap}>
-              <Image
-                source={back}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-            </View>
+            <TouchableOpacity activeOpacity={.5}
+              onPress={() =>
+                this.props.navigation.navigate('CListview')
+              }
+            >
+              <View style={styles.iconWrap}>
+                <Image
+                  source={back}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>
             
           </View>
           
-          <TouchableOpacity activeOpacity={.5}
-          onPress={() =>
-            this.props.navigation.navigate('CListview')
-          }
-          >
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Sign In</Text>
-            </View>
-          </TouchableOpacity>
+          
           <TouchableOpacity activeOpacity={.5}
             onPress={() =>
               this.props.navigation.navigate('SiginUp')
@@ -244,9 +312,7 @@ const styles = StyleSheet.create({
   },
   inputWrap: {
     flexDirection: "row",
-    marginVertical: 10,
-    height: 40,
-    backgroundColor: "transparent"
+    
   },
   inputWrapNum: {
     flexDirection: "row",
@@ -262,6 +328,7 @@ const styles = StyleSheet.create({
   },
   inputHeader: {
     textAlign: 'center',
+    fontSize: 25,
     flex: 1,
     paddingHorizontal: 10,
     backgroundColor: '#FFF'
@@ -283,8 +350,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#d73352"
   },
   icon: {
-    width: 20,
-    height: 20,
+    width: 30,
+    height: 30,
   },
   button: {
     backgroundColor: "#d73352",
