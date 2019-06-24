@@ -13,9 +13,11 @@ import SiginUp from './Siginup';
 import Home from './Home';
 import ApiCall from './ApiCall';
 import CListview from './CListview';
+import Login from './Login';
 
 
 const AppNavigator = createStackNavigator({
+  Login: { screen: Login } ,
   SignIn: { screen: SignIn } ,
   SiginUp: { screen: SiginUp } ,
   Home: { screen: Home } ,

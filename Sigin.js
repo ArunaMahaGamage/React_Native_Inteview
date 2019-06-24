@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, AppRegistry, Image, TextInput, TouchableOpacity, ImageBackground} from 'react-native';
+import RadioGroup from 'react-native-radio-buttons-group';
 
 const background = require("./background.jpg");
 const lockIcon = require("./lock.png");
@@ -21,10 +22,36 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component {
+  state = {
+    data: [
+      {
+        label: '0',
+        value: "0",
+      },
+      {
+        label: '1',
+        value: "1",
+      },
+      {
+        label: '2',
+        value: "2",
+      },
+      {
+        label: '3',
+        value: "3",
+      },
+    ],
+  };
+
+  // update state
+  onPress = data => this.setState({ data });
+
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
   };
+  let selectedButton = this.state.data.find(e => e.selected == true);
+    selectedButton = selectedButton ? selectedButton.value : this.state.data[0].label;
     return (
       <View style={{ flex: 1}}>
       <ImageBackground source={pic} style={[styles.background, styles.container]} resizeMode="cover">
@@ -35,9 +62,13 @@ export default class App extends Component {
       <View style={styles.inputWrap}>
       <TextInput
               placeholder="Enter PIN to unlock"
-              style={styles.input}
+              style={styles.inputHeader}
               underlineColorAndroid="transparent"
             />
+        </View>
+
+        <View style={styles.inputWrap}>
+          <RadioGroup radioButtons={this.state.data} onPress={this.onPress} flexDirection='row' />
         </View>
 
         <View style={styles.inputWrap}>
@@ -131,6 +162,12 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent"
   },
   input: {
+    flex: 1,
+    paddingHorizontal: 10,
+    backgroundColor: '#FFF'
+  },
+  inputHeader: {
+    textAlign: 'center',
     flex: 1,
     paddingHorizontal: 10,
     backgroundColor: '#FFF'
