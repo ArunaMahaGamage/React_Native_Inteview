@@ -28,22 +28,18 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1}}>
       <ImageBackground source={pic} style={[styles.background, styles.container]} resizeMode="cover">
-
+        
       <View style={styles.container} />
       <View style={styles.wrapper}>
-        <View style={styles.inputWrap}>
+        <View style={styles.inputIconWrap}>
         <View style={styles.iconWrap}>
               <Image
                 source={personIcon}
-                style={styles.icon}
+                style={styles.images}
                 resizeMode="contain"
               />
             </View>
-            <TextInput
-              placeholder="Username"
-              style={styles.input}
-              underlineColorAndroid="transparent"
-            />
+          
         </View>
 
         <View style={styles.inputWrap}>
@@ -126,6 +122,14 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: "transparent"
   },
+  inputIconWrap: {
+    flexDirection: "row",
+    marginVertical: 10,
+    height: 40,
+    backgroundColor: "transparent",
+    alignItems: "center",
+    justifyContent: "center"
+  },
   input: {
     flex: 1,
     paddingHorizontal: 10,
@@ -140,6 +144,10 @@ const styles = StyleSheet.create({
   icon: {
     width: 20,
     height: 20,
+  },
+  images: {
+    width: 50,
+    height: 50,
   },
   button: {
     backgroundColor: "#d73352",
