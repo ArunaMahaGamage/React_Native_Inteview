@@ -12,6 +12,7 @@ import SignIn from './Sigin';
 import SiginUp from './Siginup';
 import Home from './Home';
 import ApiCall from './ApiCall';
+import CListview from './CListview';
 
 
 const AppNavigator = createStackNavigator({
@@ -19,6 +20,7 @@ const AppNavigator = createStackNavigator({
   SiginUp: { screen: SiginUp } ,
   Home: { screen: Home } ,
   ApiCall: { screen: ApiCall } ,
+  CListview: { screen: CListview } ,
    
   }, { headerMode: 'none' }, {
     initialRouteName: 'Loading'
