@@ -25,6 +25,15 @@ export default class App extends Component {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
   };
+
+  _storeData = async () => {
+    try {
+      await AsyncStorage.setItem('PIN', '');
+    } catch (error) {
+      // Error saving data
+    }
+  };
+
     return (
       <View style={{ flex: 1}}>
       <ImageBackground source={pic} style={[styles.background, styles.container]} resizeMode="cover">
@@ -50,7 +59,7 @@ export default class App extends Component {
           
           <TouchableOpacity activeOpacity={.5}
             onPress={() =>
-              this.props.navigation.navigate('SiginUp')
+              this._storeData
             }
           >
             <View>
@@ -59,10 +68,16 @@ export default class App extends Component {
             </View>
           </TouchableOpacity>
 
+          <TouchableOpacity activeOpacity={.5}
+            onPress={() =>
+              this.props.navigation.navigate('SiginUp')
+            }
+          >
           <View>
               <Text style={styles.forgotPasswordText}>Reset PIN
               </Text>
             </View>
+            </TouchableOpacity>
 
             
             <TouchableOpacity activeOpacity={.5}

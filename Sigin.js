@@ -58,11 +58,35 @@ export default class App extends Component {
         value: "3",
       },
     ],
+    textValue: 'Change me'
   };
+
+  stateText = {
+    textValue: 'Change me'
+  }
 
   // update state
   onPress = data => this.setState({ data });
 
+  checkVarSize(){
+    if(this.var1.checkVarSize ==  4) {
+      _retrieveData = async () => {
+        try {
+          const value = await AsyncStorage.getItem('PIN');
+          if (value !== null) {
+            // We have data!!
+            this.var1 == value;
+          } else {
+            this.stateText({
+              textValue: 'Next Incurret Attempt Will User from Entering PIN'
+            })
+          }
+        } catch (error) {
+          // Error retrieving data
+        }
+      };
+    }
+   }
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
@@ -97,10 +121,15 @@ export default class App extends Component {
           <RadioGroup radioButtons={this.state.data} onPress={this.onPress} flexDirection='row'/>
         </View>
 
+        <View style={styles.inputWrap}>
+        <Text style={styles.inputHeader}>{this.stateText.textValue}
+              </Text>
+        </View>
+
         <View style={styles.inputWrapNum}>
           <TouchableOpacity activeOpacity={.5}
                 onPress={() =>
-                  this.var1 += '1'
+                  this.checkVarSize
                 }
               >
             <View style={styles.iconWrap}>
