@@ -31,6 +31,15 @@ export default class App extends Component {
 
       <View style={styles.container} />
       <View style={styles.wrapper}>
+
+      <View style={styles.inputWrap}>
+      <TextInput
+              placeholder="Enter PIN to unlock"
+              style={styles.input}
+              underlineColorAndroid="transparent"
+            />
+        </View>
+
         <View style={styles.inputWrap}>
         <View style={styles.iconWrap}>
               <Image
