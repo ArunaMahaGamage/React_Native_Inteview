@@ -98,7 +98,7 @@ export default class App extends Component {
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={.5}>
             <View>
-              <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+              {/* <Text style={styles.forgotPasswordText}>Forgot Password?</Text> */}
             </View>
           </TouchableOpacity>
       </View>

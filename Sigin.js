@@ -76,6 +76,22 @@ export default class App extends Component {
             }
           >
             <View>
+              <Text style={styles.createAccount}>Create Account
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={.5}>
+            <View>
+              <Text style={styles.createAccount}>Or
+              </Text>
+            </View>
+            </TouchableOpacity>
+          <TouchableOpacity activeOpacity={.5}
+            onPress={() =>
+              this.props.navigation.navigate('SiginUp')
+            }
+          >
+            <View>
               <Text style={styles.forgotPasswordText}>Forgot Password?
               </Text>
             </View>
@@ -133,6 +149,11 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     color: "#d73352",
+    backgroundColor: "transparent",
+    textAlign: "center"
+  },
+  createAccount: {
+    color: "#13dd1e",
     backgroundColor: "transparent",
     textAlign: "center"
   },
