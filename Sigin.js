@@ -219,7 +219,7 @@ export default class App extends Component {
             }
           >
             <View>
-              <Text style={styles.forgotPasswordText}>Tap here to reset
+              <Text style={styles.createAccount}>Tap here to reset
               </Text>
             </View>
           </TouchableOpacity>

@@ -64,9 +64,7 @@ export default class App extends Component {
               </Text>
             </View>
 
-            <view style={styles.eSpace}>
-              
-            </view>
+            
             <TouchableOpacity activeOpacity={.5}
             onPress={() =>
               this.props.navigation.navigate('SiginUp')
